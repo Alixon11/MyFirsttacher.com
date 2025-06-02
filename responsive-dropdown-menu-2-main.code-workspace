@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../dynamic-marquee-master"
+		},
+		{
+			"path": "../css-horizontal-infinite-marquee-responsive-main"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "responsive-dropdown-menu-2-main"
+	}
+}

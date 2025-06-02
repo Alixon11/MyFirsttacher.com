@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login Form</title>
+</head>
+
+<body style="background-color: #1f2633;"> 
+
+      <header class="header">
+         <nav class="nav container">
+            <div class="nav__data">
+               <a href="#" class="nav__logo">
+                  <i class="ri-planet-line"></i> Company
+               </a>
+               
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line nav__burger"></i>
+                  <i class="ri-close-line nav__close"></i>
+               </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li><a  data-uz="Uy" data-ru="Dom" href="#" class="nav__link">Дом</a></li>
+
+
+
+
+
+               
+                  
+                  
+
+
+                                    <li class="dropdown__item">
+                     <div class="nav__link">
+                        Учебы <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+
+
+                                                <li>
+                           <a href="birinchiorin.html" class="dropdown__link">
+                              <i class="ri-arrow-up-down-line"></i> Частные Садики
+                           </a>
+                        </li>
+
+                                                <li>
+                           <a href="recom.html" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i> Частные Школы
+                           </a>                          
+                        </li>
+
+                                                                        <li>
+                           <a href="recom.html" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i>  Университеты
+                           </a>                          
+                        </li>
+
+                                                                                                <li>
+                           <a href="recom.html" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i>  Курсы
+                           </a>                          
+                        </li>
+
+
+                        <!--=============== DROPDOWN SUBMENU ===============-->
+                        <li class="dropdown__subitem">
+                           <div class="dropdown__link">
+                              <i class="ri-bar-chart-line"></i> Еще <i class="ri-add-line dropdown__add"></i>
+                           </div>
+
+                           <ul class="dropdown__submenu">
+                              <li>
+                                 <a href="kori.html" class="dropdown__sublink">
+                                    <i class="ri-file-list-line"></i> Языковые предметы
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-cash-line"></i> Мир знаний
+                                 </a>
+                              </li>
+      
+                              <!-- <li>
+                                 <a href="qidir.html" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Qidirish
+                                 </a>
+                              </li> -->
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <!--=============== DROPDOWN 1 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Учителя <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="recom.html" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i> Рекомендации
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="birinchiorin.html" class="dropdown__link">
+                              <i class="ri-arrow-up-down-line"></i> Топы
+                           </a>
+                        </li>
+
+                        <!--=============== DROPDOWN SUBMENU ===============-->
+                        <li class="dropdown__subitem">
+                           <div class="dropdown__link">
+                              <i class="ri-bar-chart-line"></i> Еще <i class="ri-add-line dropdown__add"></i>
+                           </div>
+
+                           <ul class="dropdown__submenu">
+                              <li>
+                                 <a href="kori.html" class="dropdown__sublink">
+                                    <i class="ri-file-list-line"></i> посмотреть
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-cash-line"></i> купить
+                                 </a>
+                              </li>
+      
+                              <!-- <li>
+                                 <a href="qidir.html" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Qidirish
+                                 </a>
+                              </li> -->
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  
+                  <!-- <li><a href="#" class="nav__link">ko'rib chiqish</a></li> -->
+
+                  <!--=============== DROPDOWN 2 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Доб.себя <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="#" onclick="openModal(); return false;" class="dropdown__link">
+                              <i class="ri-user-line"></i> добавить
+                           </a> 
+                        </li>
+
+                        <!-- <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-lock-line"></i> Accauntlar
+                           </a>
+                        </li> -->
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-message-3-line"></i> помощь
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+
+                  
+
+                                    <li class="dropdown__item">
+                     <div class="nav__link">
+                        Контакты <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__mnu">
+                        <li>
+                           <a href="" class="dropdown__link">
+                               +998 95 702 78 22
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="" class="dropdown__link">
+                               +998 99 845 16 02
+                           </a>
+                        </li>
+
+                        
+
+                        <!--=============== DROPDOWN SUBMENU ===============-->
+
+                     </ul>
+
+                     
+                  </li>
+                  <li><a href="#" class="nav__link"> <button id="langToggle"> Русский</button></a></li>
+               </ul>
+            </div>
+         </nav>
+      </header>
+    <div class="kota">
+    <div class="contaner">
+        <div class="shape">
+            <div  class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+   
+
+
+        <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+                <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="contaner">
+        <div class="shape">
+            <div  class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+   
+
+
+        <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+            <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+                <div class="contaner">
+        <div class="shape">
+            <div class="image"><img style="border-radius: 50%;" width="83" height="85" src="https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png" alt=""></div>
+        </div>
+        <h3>Muhammad Farhan</h3>
+        <h3 class="title">Web Designer</h3>
+        <p>Web Designer,UI designer,photographer,web developer,etc</p>
+        <div class="icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    </div>
+
+ 
+
+
+    
+</body>
+
+</html>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

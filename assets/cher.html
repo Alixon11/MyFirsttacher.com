@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Add Product Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+  <!-- Кнопка открытия -->
+  <button onclick="openModal()"
+          class="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg shadow hover:bg-blue-700 transition">
+    ➕ Add Product
+  </button>
+
+  <!-- Затемнённый фон + модальное окно -->
+  <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div id="modalContent" class="bg-white w-full max-w-lg p-6 rounded-2xl shadow-xl scale-95 opacity-0 transition-all duration-300 relative">
+
+      <!-- Кнопка закрытия -->
+      <button onclick="closeModal()" class="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold">&times;</button>
+
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Add New Product</h2>
+
+      <form class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
+          <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. AirPods Pro" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+          <input type="number" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="$199.99" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
+          <input type="url" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://example.com/image.jpg" />
+        </div>
+        <div class="flex justify-end">
+          <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+            Save Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS для анимации -->
+  <script>
+    function openModal() {
+      const backdrop = document.getElementById('modalBackdrop');
+      const content = document.getElementById('modalContent');
+      backdrop.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('opacity-0', 'scale-95');
+        content.classList.add('opacity-100', 'scale-100');
+      }, 10);
+    }
+
+    function closeModal() {
+      const backdrop = document.getElementById('modalBackdrop');
+      const content = document.getElementById('modalContent');
+      content.classList.remove('opacity-100', 'scale-100');
+      content.classList.add('opacity-0', 'scale-95');
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
+

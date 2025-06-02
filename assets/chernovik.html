@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="reklama.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: hsl(220, 24%, 12%);
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black-color);
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  z-index: var(--z-fixed);
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+}
+
+.nav__logo, 
+.nav__burger, 
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+  
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.25rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__burger, 
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+  .nav__menu::-webkit-scrollbar {
+    width: 0;
+  }
+  .nav__list {
+    background-color: var(--black-color);
+    padding-top: 1rem;
+  }
+}
+
+.nav__link {
+  color: var(--white-color);
+  background-color: var(--black-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color .3s;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform .4s;
+}
+
+.dropdown__link, 
+.dropdown__sublink {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-semi-bold);
+  transition: background-color .3s;
+}
+
+.dropdown__link i, 
+.dropdown__sublink i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+
+.dropdown__link:hover, 
+.dropdown__sublink:hover {
+  background-color: var(--black-color);
+}
+
+.dropdown__menu, 
+.dropdown__submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-out;
+}
+
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu, 
+.dropdown__subitem:hover > .dropdown__submenu {
+  max-height: 1000px;
+  transition: max-height .4s ease-in;
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/*=============== DROPDOWN SUBMENU ===============*/
+.dropdown__add {
+  margin-left: auto;
+}
+
+.dropdown__sublink {
+  background-color: var(--black-color-lighten);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+  .nav__link:hover {
+    background-color: transparent;
+  }
+
+  .dropdown__item, 
+  .dropdown__subitem {
+    position: relative;
+  }
+
+  .dropdown__menu, 
+  .dropdown__submenu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, top .3s;
+  }
+
+  .dropdown__link, 
+  .dropdown__sublink {
+    padding-inline: 1rem 3.5rem;
+  }
+
+  .dropdown__subitem .dropdown__link {
+    padding-inline: 1rem;
+  }
+
+  .dropdown__submenu {
+    position: absolute;
+    left: 100%;
+    top: .5rem;
+  }
+
+  /* Show dropdown menu */
+  .dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    top: 5.5rem;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+  /* Show dropdown submenu */
+  .dropdown__subitem:hover > .dropdown__submenu {
+    opacity: 1;
+    top: 0;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+  .rasml{
+    font-size: 10px;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+      <header class="header">
+         <nav class="nav container">
+            <div class="nav__data">
+               <a href="#" class="nav__logo">
+                  <i class="ri-planet-line"></i> Company
+               </a>
+               
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line nav__burger"></i>
+                  <i class="ri-close-line nav__close"></i>
+               </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li><a data-uz="Uy" data-ru="Dom" href="#" class="nav__link">Uy</a></li>
+
+                  <li><a href="#" class="nav__link">Companiya haqida</a></li>
+
+                  <!--=============== DROPDOWN 1 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Ustozlar <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-pie-chart-line"></i> recomendatsiyada
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-arrow-up-down-line"></i> birinchi orinlar
+                           </a>
+                        </li>
+
+                        <!--=============== DROPDOWN SUBMENU ===============-->
+                        <li class="dropdown__subitem">
+                           <div class="dropdown__link">
+                              <i class="ri-bar-chart-line"></i> Yana <i class="ri-add-line dropdown__add"></i>
+                           </div>
+
+                           <ul class="dropdown__submenu">
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-file-list-line"></i> ko'rib chiqish
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-cash-line"></i> Sotib olish
+                                 </a>
+                              </li>
+      
+                              <li>
+                                 <a href="#" class="dropdown__sublink">
+                                    <i class="ri-refund-2-line"></i> Qidirish
+                                 </a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  
+                  <li><a href="#" class="nav__link">ko'rib chiqish</a></li>
+
+                  <!--=============== DROPDOWN 2 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Ozini qoshish <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-user-line"></i> Qoshish
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-lock-line"></i> Accauntlar
+                           </a>
+                        </li>
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-message-3-line"></i> Yordam sorash
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <li><a href="#" class="nav__link">Contactlarimiz</a></li>
+                  <li><a href="#" class="nav__link"> <button id="langToggle"> Русский</button></a></li>
+               </ul>
+            </div>
+         </nav>
+      </header>
+    
+    <section class="hero">
+ 
+         <img src="https://static.vecteezy.com/system/resources/previews/008/176/789/non_2x/education-is-the-way-to-success-3d-render-illustration-free-photo.jpg" alt="Registan" class="hero-image">
+        <div class="hero-text">
+            <p class="line1">ПОДГОТОВКА К БУДУЩЕМУ</p>
+            <p class="line2">НАЧНИТЕ СВОЙ ПУТЬ ОТСЮДА</p>
+           
+        </div>
+        
+    </section>
+    <div class="section marquee-craft"><div class="container fullwidth w-container"><div class="marquee"><div class="marquee-content scroll reverse"><div>Pdp junior</div><div>Thompson</div><div>Cambridge</div></div><div class="marquee-content scroll reverse"><div>Pdp junior</div><div>Thompson</div><div>Cambridge</div></div></div></div></div>
+    <section class="stats">
+        <div class="stat-item">
+            <i class="fa-solid fa-school-flag fa-2x" style="color:rgba(65, 105, 225, 0.9) ;"></i>
+            <h2>45 000</h2>
+            <p>SCHOOLS</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-globe fa-2x" style="color:rgba(65, 105, 225, 0.9) ;"></i>
+            <h2>25</h2>
+            <p>COUNTRIES</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-user-tie fa-2x" style="color:rgba(65, 105, 225, 0.9) ;"></i>
+            <h2>30 000</h2>
+            <p>STUDENTS</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-person-chalkboard fa-2x" style="color:rgba(65, 105, 225, 0.9) ;"></i>
+            <h2>500</h2>
+            <p>TEACHERS</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-graduation-cap fa-2x" style="color:rgba(65, 105, 225, 0.9) ;"></i>
+            <h2>25 000</h2>
+            <p>STUDENT COMPETITIONS</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-scroll fa-2x" style="color:rgba(65, 105, 225, 0.9) ;"></i>
+            <h2>50+</h2>
+            <p>TRAINING EVENTS</p>
+        </div>
+    </section>
+    
+   
+       
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".atribut").classList.toggle("active");
+        }
+
+        // let lastScrollTop = 0;
+        // window.addEventListener("scroll", function () {
+        //     let navbar = document.getElementById("navbar");
+        //     let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        //     if (scrollTop > lastScrollTop) {
+        //         navbar.classList.remove("show");
+        //     } else {
+        //         navbar.classList.add("show");
+        //     }
+
+        //     if (scrollTop > 50) {
+        //         navbar.classList.add("scrolled");
+        //     } else {
+        //         navbar.classList.remove("scrolled");
+        //     }
+
+        //     lastScrollTop = scrollTop;
+        // });
+
+        const translations = {
+            ru: { home: "Главная", teachers: "Учителя", kurs: "Курсы", sadiki: "Частные Садики", universities: "Частные Университеты", schools: "Частные Школы", line1: 'ПОДГОТОВКА К БУДУЩЕМУ', line2: 'НАЧНИТЕ СВОЙ ПУТЬ ОТСЮДА' },
+            en: { home: "Home", teachers: "Teachers", kurs: "Courses", sadiki: "Private Kindergartens", universities: "Private Universities", schools: "Private Schools", line1: 'PREPARING FOR THE FUTURE', line2: 'START YOUR JOURNEY HERE' },
+            uz: { home: "Bosh sahifa", teachers: "O'qituvchilar", kurs: "Kurslar", sadiki: "Xususiy bog'chalar", universities: "Xususiy universitetlar", schools: "Xususiy maktablar", line1: 'KELAJAKGA TAYYORLANING', line2: 'Sayohatingizni shu yerdan boshlang' }
+        };
+
+        function changeLanguage(lang) {
+            localStorage.setItem("selectedLanguage", lang);
+            applyLanguage(lang);
+        }
+
+        function applyLanguage(lang) {
+            document.querySelector(".home").textContent = translations[lang].home;
+            document.querySelector(".teachers").textContent = translations[lang].teachers;
+            document.querySelector(".kurs").textContent = translations[lang].kurs;
+            document.querySelector(".sadiki").textContent = translations[lang].sadiki;
+            document.querySelector(".universities").textContent = translations[lang].universities;
+            document.querySelector(".schools").textContent = translations[lang].schools;
+            document.querySelector('.line1').textContent = translations[lang].line1
+            document.querySelector('.line2').textContent = translations[lang].line2
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedLang = localStorage.getItem("selectedLanguage") || "ru";
+            applyLanguage(savedLang);
+            setTimeout(() => {
+                document.getElementById("navbar").classList.add("show");
+            }, 300);
+        });
+    </script>
+</body>
+
+</html>
