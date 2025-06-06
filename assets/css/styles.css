@@ -7,7 +7,7 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color:  rgb(74, 144, 226);
+  --black-color:  black;
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
@@ -346,7 +346,7 @@ a {
 }
 
 .rasmli {
-  background: url("https://static.vecteezy.com/system/resources/previews/008/176/789/non_2x/education-is-the-way-to-success-3d-render-illustration-free-photo.jpg") center/cover no-repeat;
+  background: url("/samarkand-uzbekistan-kupol-mechet-ploshchad.png") center/cover no-repeat;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -389,11 +389,11 @@ color: white;
 }
 
 .section.marquee-craft {
-  background-color: rgb(74, 144, 226);
+  background-color: black;
 }
 
 .section.marquee-skills {
-  background-color: rgb(74, 144, 226);
+  background-color: black;
 
 }
 
