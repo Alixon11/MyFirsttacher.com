@@ -7,7 +7,7 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: #1F2633;
+  --black-color: #3d7bb1;
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
@@ -394,11 +394,11 @@ color: white;
 }
 
 .section.marquee-craft {
-  background-color:#1f231f8a;
+  background-color:#3d7bb1;
 }
 
 .section.marquee-skills {
-  background-color: #1f231f8a;
+  background-color: #3d7bb1;
 
 }
 
@@ -623,110 +623,7 @@ h2{
 }
 
 
-    button {
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #1e40af;
-    }
-
-    /* Модальное окно */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transform: scale(0.95);
-      opacity: 0;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .modal.show {
-      transform: scale(1);
-      opacity: 1;
-    }
-
-    .modal h2 {
-      margin-top: 0;
-      font-size: 24px;
-      text-align: center;
-    }
-
-    .modal .close-btn {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 24px;
-      color: #888;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .modal .close-btn:hover {
-      color: black;
-    }
-
-    .modal form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .modal label {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .modal input {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 14px;
-      width: 100%;
-    }
-
-    .modal .submit-btn {
-      background-color: #16a34a;
-      color: white;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .modal .submit-btn:hover {
-      background-color: #15803d;
-    }
-
-    .abu{
-      font-size: clamp(24px, 5vw, 46px);
-  color: white;
-    }
+  
 
   .dropdown__mnu, 
 .dropdown__submenu {
@@ -957,7 +854,7 @@ input {
 }
 
     .conner {
-      background: #1f231f8a;
+      background: #3d7bb1;
       border-radius: 20px;
       padding: 2rem;
       max-width: 1200px;
@@ -994,7 +891,7 @@ input {
       margin-top: 2rem;
     }
     .feature-item {
-      background: #1F2633;
+      background: #305c82;
       border-radius: 20px;
       flex: 1;
       min-width: 280px;
