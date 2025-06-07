@@ -41,5 +41,38 @@ toggleBtn.addEventListener('click', () => {
 
 
 
+  const botToken = '8028876961:AAGddD-zAjkpBC2-hIu0kEZCAPFCiEoPjQU'; // замени на свой токен
+  const chatId = '6938522275'; // замени на свой chat_id
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = `📩 Новая заявка:\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+      })
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('status').innerText = "✅ Сообщение отправлено!";
+        document.getElementById('contact-form').reset();
+      } else {
+        document.getElementById('status').innerText = "❌ Ошибка при отправке.";
+      }
+    })
+    .catch(error => {
+      document.getElementById('status').innerText = "❌ Сетевая ошибка.";
+      console.error(error);
+    });
+  });
+
+
 
   
