@@ -7,11 +7,11 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: #3d7bb1;
-  --black-color-light: hsl(220, 24%, 15%);
-  --black-color-lighten: hsl(220, 20%, 18%);
-  --white-color: #fff;
-  --body-color: hsl(220, 100%, 97%);
+  --black-color:#FFF5E5;
+  --black-color-light: #FFFFFF;
+  --black-color-lighten: #FFFFFF;
+  --white-color:#2D2D2D;
+  --body-color: #0071E3;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -482,7 +482,7 @@ p {
 .image {
     height: 100px;
     width: 100px;
-    background-image: url('https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/samarkand-uzbekistan-kupol-mechet-ploshchad.png');
     background-size: cover;
     border-radius: 50%;
     border: 8px solid white;
@@ -491,6 +491,7 @@ p {
     margin-left: 170px;
     box-shadow: 0 2px 15px rgb(58, 54, 54);
     transform: rotate(-20deg);
+    filter: brightness(100%);
 }
 
 .shape {
@@ -511,6 +512,7 @@ h3 {
 
 .title {
     color: rgb(105, 100, 109);
+    font-size: 18px;
 }
 
 p {
