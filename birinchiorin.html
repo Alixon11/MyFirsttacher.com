@@ -25,8 +25,9 @@
          <nav class="nav container">
             <div class="nav__data">
                <a href="#" class="nav__logo">
-                  <i class="ri-planet-line"></i> Company
+                   <img class="logo" src="/photo_2025-06-07_11-25-50-removebg-preview.png" alt="">
                </a>
+               
                
                <div class="nav__toggle" id="nav-toggle">
                   <i class="ri-menu-line nav__burger"></i>
@@ -168,9 +169,17 @@
 
                      <ul class="dropdown__menu">
                         <li>
-                           <a href="#" onclick="openModal(); return false;" class="dropdown__link">
+                           <a href="#" onclick="toggleForm()" return false; class="dropdown__link">
                               <i class="ri-user-line"></i> добавить
                            </a> 
+                           <div class="form-container" id="formContainer">
+  <form id="userForm">
+    <input type="text" placeholder="Имя" id="name" required>
+    <textarea placeholder="Описание" id="description" required></textarea>
+    <input type="file" id="image" accept="image/*" required>
+    <button type="submit">Создать карточку</button>
+  </form>
+</div>
                         </li>
 
                         <!-- <li>
@@ -220,6 +229,9 @@
             </div>
          </nav>
       </header>
+
+
+
 
       
     <div class="kota">
