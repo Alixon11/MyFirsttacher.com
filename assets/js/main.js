@@ -76,3 +76,36 @@ toggleBtn.addEventListener('click', () => {
 
 
   
+
+  const input = document.getElementById("searchInput");
+  input.addEventListener("keyup", function () {
+    const filter = input.value.toLowerCase();
+    const cards = document.querySelectorAll(".shape");
+
+    cards.forEach((card) => {
+      const text = card.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        card.style.display = "block"; // показать
+      } else {
+        card.style.display = "none"; // скрыть
+      }
+    });
+  });
+
+
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdown__item");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Закрывать меню, если клик вне его
+  window.addEventListener("click", function (e) {
+    if (!e.target.matches("button")) {
+      const menu = document.getElementById("myDropdown");
+      if (menu && menu.style.display === "block") {
+        menu.style.display = "none";
+      }
+    }
+  });
+
+

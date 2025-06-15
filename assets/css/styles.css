@@ -1050,3 +1050,14 @@ mark {
 .btn i {
   font-size: 24px;
 }
+
+
+#searchInput {
+  padding: 8px;
+  font-size: 16px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+#tutorList li {
+  margin: 5px 0;
+}
