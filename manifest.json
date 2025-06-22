@@ -1,7 +1,7 @@
 {
   "name": "MyFirstTeacher Academy",
   "short_name": "Teacher",
-  "start_url": "/",
+  "start_url": "https://chatgpt.com/backend-api/public_content/enc/eyJpZCI6Im1fNjg1N2RiMTUwMGRjODE5MWEyZGM5OWUzZjU1ZTMyOWY6ZmlsZV8wMDAwMDAwMDc4NGM2MjQzYWNlNjQyMTg2ZDRkZDFiOCIsInRzIjoiNDg2Mjc0IiwicCI6InB5aSIsInNpZyI6IjljNDUxYzQxOTQzOWYxNGM3ODlkMTdkYTA4ODhlYThlZGU0MDY0MTNkZjU0YjMzZmNmZDA5NTY1OWQwODI4NTUiLCJ2IjoiMCIsImdpem1vX2lkIjpudWxsfQ==",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
