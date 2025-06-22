@@ -1,19 +1,21 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open('myfirstteacher-cache').then((cache) =>
-      cache.addAll([
+    caches.open('my-cache').then((cache) => {
+      return cache.addAll([
         '/',
         '/index.html',
-        '/assets/css/styles.css',
+        '/assets/style.css',
         '/icons/icon-192.png',
         '/icons/icon-512.png'
-      ])
-    )
+      ]);
+    })
   );
 });
 
 self.addEventListener('fetch', (e) => {
   e.respondWith(
-    caches.match(e.request).then((response) => response || fetch(e.request))
+    caches.match(e.request).then((response) => {
+      return response || fetch(e.request);
+    })
   );
 });

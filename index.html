@@ -298,9 +298,10 @@ A modern approach to education: learn all subjects conveniently and quickly with
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
-      .then(() => console.log('Service Worker подключён'))
-      .catch((err) => console.error('Ошибка SW:', err));
+      .then(() => console.log('✅ Service Worker активен'))
+      .catch(err => console.error('❌ Ошибка Service Worker:', err));
   }
+</script>
 </script>
       
    </body>
